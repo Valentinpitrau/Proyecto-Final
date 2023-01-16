@@ -1,0 +1,23 @@
+<%- include("template/head.ejs", {tituloWeb: 'Inicio'}); %>
+<body>
+    <h1 class="text-primary" >Inicio</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.ejs">Inicio</a>
+                <a href="/views/cart.ejs">Carrito</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Lista de Productos</h2>
+
+        <% if (products.lenght) { %> <% for (let product of products) %>
+          <h3> <%= product.title %></h3>
+        <% } else { %>
+            <div>No products availible</div>
+        <% } %>
+    </main>
+    <script src="/api/productos.js"></script>
+</body>
+</html>
